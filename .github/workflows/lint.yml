@@ -21,7 +21,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Lint the app
-        run: ng lint angular.io-example --format stylish --output-file lint-result
+        run: ng lint angular.io-example
 
       - name: Upload linting results
         uses: actions/upload-artifact@v3
