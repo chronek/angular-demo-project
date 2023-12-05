@@ -1,0 +1,31 @@
+name: Lint PR
+
+on:
+  pull_request:
+    branches:
+      - main # Adjust the branch name as needed
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Adjust Node.js version as needed
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Lint the app
+        run: ng lint copilot-frontend --format stylish --output-file lint-result
+
+      - name: Upload linting results
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-result
+          path: lint-result  # Adjust the path as needed
+          retention-days: 5
