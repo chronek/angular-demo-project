@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   template: `<h1>Hello world!</h1>`,
   styleUrls: ['./app.component.css'],
 })
+
+// This is a test
 export class AppComponent {
   title = 'homes';
 }
