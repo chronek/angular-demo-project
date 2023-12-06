@@ -23,6 +23,9 @@ jobs:
       - name: Lint the app
         run: ng lint angular.io-example
 
+      -name: Test the app
+        run: ng test --no-watch --no-progress --browsers=ChromeHeadless # run headless for CI
+
       - name: Upload linting results
         uses: actions/upload-artifact@v3
         with:
