@@ -21,7 +21,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Lint the app
-        run: ng lint angular.io-example
+        run: ng lint example-app
 
       - name: Test the app
         run: ng test --no-watch --no-progress --browsers=ChromeHeadless # run headless for CI
